@@ -37,7 +37,7 @@ export default function Home() {
     if (!nombreUsuario.trim()) return;
     await apiClient.post("/usuarios", { usuario: nombreUsuario });
     setNombreUsuario("");
-    if (tipoVista === "usuarios") fetchUsuarios();
+    //if (tipoVista === "usuarios") fetchUsuarios();
   };
 
   const agregarComentario = async () => {
@@ -48,17 +48,17 @@ export default function Home() {
     });
     setUsuarioParaComentario("");
     setNuevoComentario("");
-    if (tipoVista === "comentarios") fetchComentarios();
+    //if (tipoVista === "comentarios") fetchComentarios();
   };
 
   const eliminarUsuario = async (id: number) => {
     await apiClient.delete(`/usuarios`, { params: { id } });
-    fetchUsuarios();
+    //fetchUsuarios();
   };
 
   const eliminarComentario = async (id: number) => {
     await apiClient.delete(`/comentarios`, { params: { id } });
-    fetchComentarios();
+    //fetchComentarios();
   };
 
   const handleSeleccion = async () => {
